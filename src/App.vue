@@ -1,11 +1,12 @@
 <script setup lang="ts">
+import { RouterView } from 'vue-router';
+
 import MFooter from './components/MFooter.vue';
 import MToTop from './components/MToTop.vue';
-import MHeader from './components/MHeader.vue';
 </script>
 
 <template>
-  <m-header />
+  <router-view />
   <m-to-top />
   <m-footer />
 </template>
