@@ -48,7 +48,7 @@ section {
     cursor: pointer;
 
     span {
-      color: var(--color-white-400);
+      color: light-dark(var(--color-black-400), var(--color-light-400));
       font-size: 1rem;
       margin-right: 0.5rem;
     }

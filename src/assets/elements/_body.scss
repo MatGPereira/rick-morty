@@ -1,4 +1,4 @@
 body {
-  background-color: var(--color-black-500);
+  background-color: light-dark(var(--color-white-500), var(--color-black-500));
   padding-inline: 21.875rem;
 }

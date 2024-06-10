@@ -17,7 +17,7 @@ import iconPath from '../assets/images/icons/code.ico.svg?url';
 <style scoped lang="scss">
 footer {
   align-items: center;
-  color: var(--color-white-900);
+  color: light-dark(var(--color-black-900), var(--color-white-900));
   display: flex;
   flex-wrap: nowrap;
   font-size: 14px;
@@ -25,7 +25,10 @@ footer {
   position: relative;
 
   &::before {
-    background-color: var(--color-white-500);
+    background-color: light-dark(
+      var(--color-black-500),
+      var(--color-white-500)
+    );
     content: '';
     height: 2px;
     position: absolute;

@@ -1,23 +1,17 @@
 <script setup lang="ts">
-import { defineProps, computed } from 'vue';
+import { defineProps } from 'vue';
 import MIcon from './MIcon.vue';
 
 interface IProps {
   ico: string;
   text: string;
-  active?: boolean;
 }
 
 const props = defineProps<IProps>();
-const styleObject = computed(() => ({
-  backgroundColor: props.active
-    ? 'var(--color-brand)'
-    : 'var(--color-black-500)'
-}));
 </script>
 
 <template>
-  <button :style="styleObject">
+  <button>
     <m-icon :path="props.ico" />
     <span>{{ props.text }}</span>
   </button>
@@ -28,7 +22,7 @@ button {
   align-items: center;
   border: none;
   border-radius: 32px;
-  color: var(--color-white-900);
+  color: light-dark(var(--color-black-900), var(--color-white-900));
   cursor: pointer;
   display: flex;
   font-size: 0.875rem;
