@@ -1,0 +1,27 @@
+@use 'sass:meta';
+@layer settings, tools, generics, elements, objects, components, utilities;
+
+@layer settings {
+  @include meta.load-css('settings');
+}
+
+@layer tools {
+}
+
+@layer generics {
+  @include meta.load-css('generics');
+}
+
+@layer elements {
+  @include meta.load-css('elements');
+}
+
+@layer objects {
+}
+
+@layer components {
+}
+
+@layer utilities {
+  @include meta.load-css('utilities');
+}
