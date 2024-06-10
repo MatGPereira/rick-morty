@@ -1,0 +1,6 @@
+@media (prefers-color-scheme: dark) {
+  img,
+  video {
+    filter: brightness(0.8) saturate(1.25);
+  }
+}

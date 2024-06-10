@@ -1,0 +1,13 @@
+:root {
+  --font-step-0: clamp(1.13rem, calc(0.83rem + 0.75vw), 1.5rem);
+  --font-step-1: clamp(1.35rem, calc(0.83rem + 1.3vw), 2rem);
+
+  --font-size-default: var(--font-step-0);
+  --font-weight-default: regular;
+
+  --line-height-default: 1.5;
+
+  --font-family-sans-serif: 'inter', -apple-system, blinkmacsystemfont,
+    avenir next, avenir, segoe ui, helvetica neue, helvetica, ubuntu, roboto,
+    noto, arial, sans-serif;
+}
