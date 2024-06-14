@@ -1,9 +1,15 @@
 <script setup lang="ts">
+import { inject } from 'vue';
+
 import MHeader from '@/components/MHeader.vue';
 import MTag from '@/components/MTag.vue';
 
 import moonIcon from '../assets/images/icons/moon.ico.svg?url';
 import sunIcon from '../assets/images/icons/sun.ico.svg?url';
+
+const colorSchemePreference: MediaQueryList = inject(
+  'color-scheme-preference'
+)!;
 </script>
 
 <template>
@@ -17,13 +23,18 @@ import sunIcon from '../assets/images/icons/sun.ico.svg?url';
         </h1>
         <p>Personagens. localizações, episódios e muito mais.</p>
         <div class="toggle-theme">
-          <m-tag :ico="moonIcon" name="dark" text="Escuro" />
-          <m-tag :ico="sunIcon" name="light" text="Claro" />
+          <m-tag :ico="moonIcon" text="Escuro" />
+          <m-tag :ico="sunIcon" text="Claro" />
         </div>
-        <strong>Ai sim, Porr#@%&*</strong>
+        <strong v-if="colorSchemePreference.matches">Ai sim, Porr#@%&*</strong>
+        <strong v-else>Wubba Lubba Dub Dub! Cuidado com os olhos.</strong>
       </div>
       <figure>
-        <img src="../assets/images/rick-dark.png" />
+        <img
+          v-if="colorSchemePreference.matches"
+          src="../assets/images/rick-dark.png"
+        />
+        <img v-else src="../assets/images/rick-light.png" />
       </figure>
     </div>
   </section>

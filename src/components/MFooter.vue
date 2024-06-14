@@ -26,7 +26,7 @@ footer {
 
   &::before {
     background-color: light-dark(
-      var(--color-black-500),
+      var(--color-white-600),
       var(--color-white-500)
     );
     content: '';

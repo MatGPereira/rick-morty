@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { defineProps } from 'vue';
+
 import MIcon from './MIcon.vue';
 
 interface IProps {
@@ -7,11 +8,16 @@ interface IProps {
   text: string;
 }
 
+function onClick(event: MouseEvent) {
+  const target: HTMLButtonElement = event.currentTarget! as HTMLButtonElement;
+  target.classList.toggle('clicked');
+}
+
 const props = defineProps<IProps>();
 </script>
 
 <template>
-  <button>
+  <button type="button" @click="onClick">
     <m-icon :path="props.ico" />
     <span>{{ props.text }}</span>
   </button>
@@ -27,6 +33,10 @@ button {
   display: flex;
   font-size: 0.875rem;
   padding: 0.3125rem 0.375rem;
+
+  &.clicked {
+    background-color: var(--color-brand);
+  }
 
   span {
     margin-left: 0.5rem;
